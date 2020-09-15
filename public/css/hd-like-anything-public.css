@@ -1,0 +1,57 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+@keyframes bounce {
+  from {
+    transform: scale(1); }
+  to {
+    transform: scale(0.9); } }
+
+@keyframes bounceUp {
+  from {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.4); }
+  to {
+    transform: scale(1); } }
+
+.hdla_container {
+  display: inline-flex;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out; }
+  .hdla_container.liked {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+    animation: bounceUp 0.35s ease-out; }
+    .hdla_container.liked svg path {
+      transition: all 0.2s ease-in-out;
+      fill: #ad3133;
+      stroke: #fff; }
+  .hdla_container.notliked svg path {
+    transition: all 0.2s ease-in-out;
+    fill: transparent;
+    stroke: #ad3133; }
+  .hdla_container.working, .hdla_container.liked.working {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.7; }
+    .hdla_container.working svg, .hdla_container.liked.working svg {
+      animation: bounce 0.35s ease infinite alternate;
+      transition: all 0.2s ease-in-out; }
+  .hdla_container svg {
+    width: 1em;
+    transition: all .2s ease-out;
+    fill: transparent;
+    margin-right: 0.1em; }
+    .hdla_container svg path {
+      stroke-width: 2px;
+      stroke: #ad3133; }
+  .hdla_container:hover svg {
+    transition: all .2s ease-out;
+    transform: scale(1.2); }
+  .hdla_container:active svg {
+    transition: all .2s ease-out;
+    transform: scale(0.5); }
+  .hdla_container b {
+    margin-right: 0.1em; }
